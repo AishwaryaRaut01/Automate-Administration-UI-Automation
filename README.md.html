@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>README.md</title>
+
+    <style>
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            word-wrap: break-word;
+
+            max-width: 1012px;
+
+            margin: 0 auto;
+
+            padding: 45px;
+
+            background-color: #ffffff;
+
+            color: #24292e;
+
+        }
+
+        h1, h2, h3 {
+
+            margin-top: 24px;
+
+            margin-bottom: 16px;
+
+            font-weight: 600;
+
+            line-height: 1.25;
+
+            border-bottom: 1px solid #eaecef;
+
+            padding-bottom: 0.3em;
+
+        }
+
+        h1 { font-size: 2em; }
+
+        h2 { font-size: 1.5em; }
+
+        h3 { 
+            font-size: 1.25em; 
+            border-bottom: none; 
+        }
+
+        p { 
+            margin-top: 0; 
+            margin-bottom: 16px; 
+        }
+
+        ul { 
+            padding-left: 2em; 
+            margin-top: 0; 
+            margin-bottom: 16px; 
+        }
+
+        li { 
+            margin-bottom: 0.25em; 
+        }
+
+        code {
+
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+            font-size: 85%;
+
+            background-color: rgba(27,31,35,0.05);
+
+            padding: 0.2em 0.4em;
+
+            border-radius: 3px;
+
+        }
+
+        pre {
+
+            margin-top: 0;
+
+            margin-bottom: 16px;
+
+            padding: 16px;
+
+            overflow: auto;
+
+            font-size: 85%;
+
+            line-height: 1.45;
+
+            background-color: #f6f8fa;
+
+            border-radius: 6px;
+
+        }
+
+        pre code {
+
+            font-size: 100%;
+
+            padding: 0;
+
+            background-color: transparent;
+
+            border-radius: 0;
+
+            white-space: pre;
+
+        }
+
+        hr {
+
+            height: 0.25em;
+
+            padding: 0;
+
+            margin: 24px 0;
+
+            background-color: #e1e4e8;
+
+            border: 0;
+
+        }
+
+        strong { 
+            font-weight: 600; 
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===================================================== -->
+    <!-- PROJECT INTRODUCTION -->
+    <!-- ===================================================== -->
+
+    <h1>Automate Administration - Test Automation Framework</h1>
+
+    <p>
+        A robust, enterprise-grade <strong>Hybrid Test Automation Framework</strong>
+        built using <strong>Java</strong>, <strong>Selenium WebDriver</strong>,
+        <strong>TestNG</strong>, and <strong>Maven</strong>.
+        The framework implements a modular design combining the
+        <strong>Page Object Model (POM)</strong> pattern with
+        <strong>Data-Driven</strong> and <strong>Keyword-Driven</strong>
+        capabilities.
+    </p>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- ARCHITECTURAL LAYOUT -->
+    <!-- ===================================================== -->
+
+    <h2>🏗️ Core Architectural Layout</h2>
+
+    <p>
+        The project follows a standard Maven directory structure to maintain
+        a strict separation between source logic, test cases, utilities,
+        and configuration files:
+    </p>
+
+<pre><code>Automate_administration/
+
+├── src/main/java/
+
+│   ├── Base/
+│   │   └── BrowserSetup.java
+│   │       # Browser initialization, teardown,
+│   │       # waits, scrolling and reusable browser actions
+│
+│   ├── Pages/
+│   │   ├── LoginPage.java
+│   │   │   # Locators and workflows for Login screen
+│   │   │
+│   │   ├── OrganizationPage.java
+│   │   │   # Locators and workflows for Organization management
+│   │   │
+│   │   ├── OrgApprovalDetailsPage.java
+│   │   │   # Organization approval details and timeline workflows
+│   │   │
+│   │   ├── UsersPage.java
+│   │   │   # User creation, validation and management workflows
+│   │   │
+│   │   ├── PermissionsPage.java
+│   │   │   # Permission creation and management workflows
+│   │   │
+│   │   ├── RolesPage.java
+│   │   │   # Role management and validation workflows
+│   │   │
+│   │   ├── GroupsPage.java
+│   │   │   # Group management and validation workflows
+│   │   │
+│   │   └── TransactionSummaryPage.java
+│   │       # Transaction Summary workflows and validations
+│
+│   └── Utilities/
+│       ├── AccessibilityUtil.java
+│       │   # Automated accessibility validation utility
+│       │
+│       ├── ConfigReader.java
+│       │   # Reads framework configuration properties
+│       │
+│       └── ExtentReportListener.java
+│           # TestNG listener for Extent Reports and execution logging
+│
+├── src/main/resources/
+│   # Application/framework resources
+│
+├── src/test/java/
+│   └── Tests/
+│       ├── LoginTest.java
+│       │   # Login workflow test cases
+│       │
+│       ├── OrganizationTest.java
+│       │   # Organization workflow test cases
+│       │
+│       ├── OrgApprovalDetailsTest.java
+│       │   # Organization approval validation test cases
+│       │
+│       ├── UsersTest.java
+│       │   # User creation and validation test cases
+│       │
+│       ├── PermissionsTest.java
+│       │   # Permission creation and validation test cases
+│       │
+│       ├── RolesTest.java
+│       │   # Role management test cases
+│       │
+│       ├── GroupsTest.java
+│       │   # Group management test cases
+│       │
+│       └── TransactionSummaryTest.java
+│           # Transaction Summary validation test cases
+│
+├── src/test/resources/
+│   └── config.properties
+│       # Environment URL, browser and configuration parameters
+│
+├── pom.xml
+│   # Maven dependencies and project configuration
+│
+├── testng.xml
+│   # TestNG suite and test execution configuration
+│
+├── Reports/
+│   # Extent HTML reports
+│
+├── test-output/
+│   # TestNG execution reports and results
+│
+└── target/
+    # Maven generated build and compiled files</code></pre>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- TECHNOLOGY STACK -->
+    <!-- ===================================================== -->
+
+    <h2>🛠️ Tech Stack & Key Components</h2>
+
+    <ul>
+
+        <li>
+            <strong>Programming Language:</strong>
+            Java
+        </li>
+
+        <li>
+            <strong>Automation Tool:</strong>
+            Selenium WebDriver
+        </li>
+
+        <li>
+            <strong>Build Automation & Dependency Manager:</strong>
+            Apache Maven
+        </li>
+
+        <li>
+            <strong>Test Orchestration Engine:</strong>
+            TestNG
+        </li>
+
+        <li>
+            <strong>Design Pattern:</strong>
+            Page Object Model (POM)
+        </li>
+
+        <li>
+            <strong>Data Management:</strong>
+            Properties-based configuration
+        </li>
+
+        <li>
+            <strong>Reporting Engine:</strong>
+            Extent Reports
+        </li>
+
+        <li>
+            <strong>Accessibility Testing:</strong>
+            AccessibilityUtil
+        </li>
+
+    </ul>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- ARCHITECTURAL DESIGN -->
+    <!-- ===================================================== -->
+
+    <h2>🧩 Architectural Design Pillars</h2>
+
+
+    <h3>1. Page Object Model (POM)</h3>
+
+    <p>
+        Each application module has a dedicated Page class inside the
+        <code>Pages</code> package. Page classes contain web element
+        locators, reusable actions, waits, validations, and
+        module-specific workflows.
+    </p>
+
+    <p>
+        Test classes remain responsible for test execution, assertions,
+        test flow and reporting. This separation improves code
+        readability, reusability and maintainability.
+    </p>
+
+    <p>
+        The current Page Object structure covers:
+        <strong>Login, Organization, Organization Approval Details,
+        Users, Permissions, Roles, Groups and Transaction Summary.</strong>
+    </p>
+
+
+    <h3>2. Base Configuration & Lifecycle</h3>
+
+    <p>
+        <code>BrowserSetup.java</code> manages global browser initialization,
+        browser selection, window maximization, driver timeouts,
+        reusable scrolling actions and clean browser teardown.
+    </p>
+
+    <p>
+        Common browser-level actions are maintained in the Base class
+        so that they can be reused across different Page classes.
+    </p>
+
+
+    <h3>3. Data-Driven Configurations</h3>
+
+    <p>
+        Global execution parameters are externalized from the Java code
+        and maintained inside <code>config.properties</code>.
+        The <code>ConfigReader.java</code> utility reads these values
+        dynamically during test execution.
+    </p>
+
+    <p>
+        This allows application URL, browser and other environment
+        configurations to be changed without modifying the test code.
+    </p>
+
+
+    <h3>4. Modular Utilities System</h3>
+
+    <ul>
+
+        <li>
+            <strong>BrowserSetup.java:</strong>
+            Provides reusable browser setup, teardown, waits,
+            scrolling and common browser-level actions.
+        </li>
+
+        <li>
+            <strong>ConfigReader.java:</strong>
+            Reads environment-specific configuration values from
+            the properties file.
+        </li>
+
+        <li>
+            <strong>ExtentReportListener.java:</strong>
+            Captures test execution information including
+            Info, Pass, Fail, screenshots and execution results
+            in Extent Reports.
+        </li>
+
+        <li>
+            <strong>AccessibilityUtil.java:</strong>
+            Performs automated accessibility validation and reports
+            accessibility violations identified during testing.
+        </li>
+
+    </ul>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- MODULE STRUCTURE -->
+    <!-- ===================================================== -->
+
+    <h2>📦 Application Modules Covered</h2>
+
+    <p>
+        The framework is structured to support independent automation
+        of individual Administration modules while maintaining
+        reusable common components.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>Login:</strong>
+            Login authentication and related validations.
+        </li>
+
+        <li>
+            <strong>Organization:</strong>
+            Organization hierarchy, organization selection and
+            organization-related workflows.
+        </li>
+
+        <li>
+            <strong>Organization Approval:</strong>
+            Approval details, approval events and timeline validations.
+        </li>
+
+        <li>
+            <strong>Users:</strong>
+            User creation, organization selection, required-field
+            validation and user data verification.
+        </li>
+
+        <li>
+            <strong>Permissions:</strong>
+            Permission creation, organization selection,
+            module/permission selection and confirmation.
+        </li>
+
+        <li>
+            <strong>Roles:</strong>
+            Role management and related validations.
+        </li>
+
+        <li>
+            <strong>Groups:</strong>
+            Group management and related validations.
+        </li>
+
+        <li>
+            <strong>Transaction Summary:</strong>
+            Transaction Summary workflows and validations.
+        </li>
+
+    </ul>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- EXECUTION -->
+    <!-- ===================================================== -->
+
+    <h2>🚀 Execution & Setup Instructions</h2>
+
+    <h3>Prerequisites</h3>
+
+    <ul>
+
+        <li>
+            Java Development Kit (JDK) installed
+        </li>
+
+        <li>
+            Apache Maven installed
+        </li>
+
+        <li>
+            Chrome / Edge browser installed
+        </li>
+
+        <li>
+            Browser and WebDriver versions compatible with the
+            execution environment
+        </li>
+
+    </ul>
+
+
+    <h3>Local Command Line Execution</h3>
+
+    <p>
+        Navigate to the project root directory and execute the
+        automation suite using Maven:
+    </p>
+
+<pre><code>mvn clean test</code></pre>
+
+
+    <h3>Targeted Suite Execution via TestNG</h3>
+
+    <p>
+        The TestNG suite can be used to control and execute the
+        required automation test classes:
+    </p>
+
+<pre><code>mvn test -DsuiteXmlFile=testng.xml</code></pre>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- TEST EXECUTION FLOW -->
+    <!-- ===================================================== -->
+
+    <h2>🔄 Test Execution Flow</h2>
+
+    <ol>
+
+        <li>
+            Test execution starts through TestNG.
+        </li>
+
+        <li>
+            <code>BrowserSetup</code> initializes the configured browser
+            and application URL.
+        </li>
+
+        <li>
+            The required Page Object is initialized using
+            <strong>PageFactory</strong>.
+        </li>
+
+        <li>
+            Test methods execute the required application workflow.
+        </li>
+
+        <li>
+            Explicit waits are used where required to synchronize
+            browser interactions with the application.
+        </li>
+
+        <li>
+            Reusable methods from <code>BrowserSetup</code> are called
+            from Page classes when common browser actions such as
+            scrolling are required.
+        </li>
+
+        <li>
+            Assertions validate the expected application behavior.
+        </li>
+
+        <li>
+            <code>ExtentReportListener</code> records Info, Pass,
+            Fail and execution details.
+        </li>
+
+        <li>
+            Screenshots and execution results are captured for
+            failed scenarios where configured.
+        </li>
+
+        <li>
+            Browser teardown is performed after test execution.
+        </li>
+
+    </ol>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- REPORTING -->
+    <!-- ===================================================== -->
+
+    <h2>📈 Post-Execution Reporting</h2>
+
+    <p>
+        Upon test execution completion, reporting and diagnostic
+        information is generated within the project workspace.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>Extent HTML Reports:</strong>
+            Provides graphical execution results including
+            Info, Pass, Fail and test execution details.
+        </li>
+
+        <li>
+            <strong>TestNG Reports:</strong>
+            Provides standard TestNG execution results.
+        </li>
+
+        <li>
+            <strong>Screenshots:</strong>
+            Captured during failed test execution where configured.
+        </li>
+
+        <li>
+            <strong>Console Logs:</strong>
+            Displays execution information, pass/fail status
+            and diagnostic messages during runtime.
+        </li>
+
+    </ul>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- ACCESSIBILITY -->
+    <!-- ===================================================== -->
+
+    <h2>♿ Accessibility Testing</h2>
+
+    <p>
+        Accessibility validation is supported through
+        <code>AccessibilityUtil.java</code>.
+        The utility performs automated accessibility checks
+        against application pages and identifies accessibility
+        violations.
+    </p>
+
+    <p>
+        Accessibility results are integrated with the test execution
+        flow and can be reviewed along with the generated
+        Extent Report.
+    </p>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- REUSABILITY -->
+    <!-- ===================================================== -->
+
+    <h2>♻️ Reusability & Maintainability</h2>
+
+    <ul>
+
+        <li>
+            Common browser operations are maintained in
+            <code>BrowserSetup.java</code>.
+        </li>
+
+        <li>
+            Page-specific locators and actions are maintained
+            inside individual Page classes.
+        </li>
+
+        <li>
+            Test classes contain test execution and validation logic
+            instead of directly handling page locators.
+        </li>
+
+        <li>
+            Configuration values are maintained externally in
+            <code>config.properties</code>.
+        </li>
+
+        <li>
+            Common methods can be reused across multiple modules,
+            reducing duplicate automation code.
+        </li>
+
+        <li>
+            Changes to page locators can generally be handled inside
+            the corresponding Page class without changing the
+            complete test flow.
+        </li>
+
+    </ul>
+
+    <hr>
+
+
+    <!-- ===================================================== -->
+    <!-- PROJECT BENEFITS -->
+    <!-- ===================================================== -->
+
+    <h2>✅ Framework Benefits</h2>
+
+    <ul>
+
+        <li>
+            Modular and maintainable automation structure
+        </li>
+
+        <li>
+            Reusable Page Object classes
+        </li>
+
+        <li>
+            Centralized browser configuration and common actions
+        </li>
+
+        <li>
+            Externalized test configuration
+        </li>
+
+        <li>
+            Automated functional and accessibility validation
+        </li>
+
+        <li>
+            Detailed Extent Reports
+        </li>
+
+        <li>
+            TestNG-based execution and assertions
+        </li>
+
+        <li>
+            Maven-based dependency and execution management
+        </li>
+
+        <li>
+            Easy addition of new modules and test scenarios
+        </li>
+
+    </ul>
+
+</body>
+
+</html>

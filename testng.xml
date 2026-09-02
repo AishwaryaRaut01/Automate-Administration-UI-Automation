@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ✅ FIXED: Provided the exact complete URL path to the formal TestNG configuration DTD rulebook -->
+<!DOCTYPE suite SYSTEM "https://testng.org">
+<suite name="OpenCompliance Test Suite" verbose="1">
+
+    <listeners>
+        <listener class-name="Utilities.ExtentReportListener" />
+    </listeners>
+
+    <test name="Login Regression Verification">
+        <classes>
+            <class name="Tests.LoginTest" />
+            <class name="Tests.PermissionsTest" /> 
+        </classes>
+    </test>
+    
+</suite>

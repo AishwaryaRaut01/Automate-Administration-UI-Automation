@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-08-26T11:47:56 IST" name="Default suite" finished-at="2026-08-26T11:48:50 IST" duration-ms="54542">
+    <groups>
+    </groups>
+    <test started-at="2026-08-26T11:47:56 IST" name="Default test" finished-at="2026-08-26T11:48:50 IST" duration-ms="54542">
+      <class name="Tests.TransactionSummaryTest">
+        <test-method is-config="true" signature="setupSummarySuite()[pri:0, instance:Tests.TransactionSummaryTest@7bedc48a]" started-at="2026-08-26T11:47:56 IST" name="setupSummarySuite" finished-at="2026-08-26T11:48:00 IST" duration-ms="3668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSummarySuite -->
+        <test-method signature="executeLoginSession()[pri:1, instance:Tests.TransactionSummaryTest@7bedc48a]" started-at="2026-08-26T11:48:00 IST" name="executeLoginSession" finished-at="2026-08-26T11:48:09 IST" duration-ms="9659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeLoginSession -->
+        <test-method signature="runInvestigationSummaryWorkflow()[pri:2, instance:Tests.TransactionSummaryTest@7bedc48a]" started-at="2026-08-26T11:48:09 IST" name="runInvestigationSummaryWorkflow" finished-at="2026-08-26T11:48:50 IST" depends-on-methods="Tests.TransactionSummaryTest.executeLoginSession" duration-ms="41024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runInvestigationSummaryWorkflow -->
+      </class> <!-- Tests.TransactionSummaryTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
