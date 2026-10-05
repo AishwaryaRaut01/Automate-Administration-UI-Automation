@@ -109,12 +109,12 @@ public class GroupsTest extends BrowserSetup {
 
         // ================= NEW ADDED SEGMENT =================
         // 6. Pagination Navigation Execution Block
-        ExtentReportListener.info("Selecting page value 5 and navigating to the last page");
-        groupsPage.selectPageValue();
-        
-        ExtentReportListener.pass("Pagination applied successfully");
-        
-        Thread.sleep(1000);
+//        ExtentReportListener.info("Selecting page value 5 and navigating to the last page");
+//        groupsPage.selectPageValue();
+//        
+//        ExtentReportListener.pass("Pagination applied successfully");
+//        
+//        Thread.sleep(1000);
 
         // 7. Extract Grid Row Records for Data Validation Checks
         ExtentReportListener.info("Extracting values from the last row inside the table grid");

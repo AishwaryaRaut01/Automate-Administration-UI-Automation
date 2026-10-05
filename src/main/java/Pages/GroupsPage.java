@@ -67,17 +67,17 @@ public class GroupsPage extends BrowserSetup {
     @FindBy(xpath = "//div[@role='option' and @value='5']")
     private WebElement pageValue;
 
-    @FindBy(xpath = "//tr[.//td[@data-last-row='true']]")
+    @FindBy(xpath = "(//div[@role='row' and @row-id])[last()]")
     private WebElement lastRow;
 
     // --- Table Content Locators ---
-    @FindBy(xpath = "//td[@data-last-row='true' and @data-index='2']")
+    @FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='name'])[last()]")
     private WebElement groupNameTableValue; 
 
-    @FindBy(xpath = "//td[@data-last-row='true' and @data-index='5']")
+    @FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='description'])[last()]")
     private WebElement descriptionTableValue; 
 
-    @FindBy(xpath = "//td[@data-last-row='true' and @data-index='3']")
+    @FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='created_on'])[last()]")
     private WebElement createdOnTableValue; 
 
     // --- Action Methods ---

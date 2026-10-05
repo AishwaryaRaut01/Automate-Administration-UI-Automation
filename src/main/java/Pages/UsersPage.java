@@ -79,16 +79,16 @@ public class UsersPage extends BrowserSetup{
 	@FindBy(xpath = "//div[@role='option' and @value='5']")
 	WebElement pageValue;
 
-	@FindBy(xpath = "//tr[.//td[@data-last-row='true']]")
+	@FindBy(xpath = "(//div[@role='row' and @row-id])[last()]")
 	WebElement lastRow;
 
-	@FindBy(xpath = "//td[@data-last-row='true' and @data-index='3']")
+	@FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='first_name'])[last()]")
 	WebElement firstNameValue;
 
-	@FindBy(xpath = "//td[@data-last-row='true' and @data-index='6']")
+	@FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='email'])[last()]")
 	WebElement emailValue;
 
-	@FindBy(xpath = "//td[@data-last-row='true' and @data-index='10']")
+	@FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='created_on'])[last()]")
 	WebElement createdOnValue;
 
 	// USERS MODULE
@@ -206,14 +206,14 @@ public class UsersPage extends BrowserSetup{
 		
 	}
 
-	public void selectPageValue() throws InterruptedException {
-
-		wait.until(ExpectedConditions.elementToBeClickable(pageSelectButton)).click();
-		Thread.sleep(1500);
-		wait.until(ExpectedConditions.elementToBeClickable(pageValue)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(lastPageButton)).click();
-		
-	}
+//	public void selectPageValue() throws InterruptedException {
+//
+//		wait.until(ExpectedConditions.elementToBeClickable(pageSelectButton)).click();
+//		Thread.sleep(1500);
+//		wait.until(ExpectedConditions.elementToBeClickable(pageValue)).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(lastPageButton)).click();
+//		
+//	}
 
 	public String getDisplayedFirstName() throws InterruptedException {
 		Thread.sleep(1000);

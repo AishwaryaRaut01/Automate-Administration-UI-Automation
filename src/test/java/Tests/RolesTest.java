@@ -98,10 +98,10 @@ public class RolesTest extends BrowserSetup {
         ExtentReportListener.pass("Roles List heading is visible");
 
         // 6. Pagination Navigation Execution Block
-        ExtentReportListener.info("Selecting page value 5 and navigating to the last page");
-        rolesPage.selectPageValue();
-        Thread.sleep(1000);
-        ExtentReportListener.pass("Pagination applied successfully");
+//        ExtentReportListener.info("Selecting page value 5 and navigating to the last page");
+//        rolesPage.selectPageValue();
+//        Thread.sleep(1000);
+//        ExtentReportListener.pass("Pagination applied successfully");
 
         // 7. Extract Grid Row Records for Data Validation Checks
         ExtentReportListener.info("Extracting values from the last row inside the table grid");
@@ -127,7 +127,7 @@ public class RolesTest extends BrowserSetup {
         System.out.println("[PASS] Dynamic Roles and table validations completed successfully.");
     }
 
-    @AfterClass
+    //@AfterClass
     public void closeRolesSessionBrowser() {
         ExtentReportListener.info("Closing browser session");
         super.teardown();

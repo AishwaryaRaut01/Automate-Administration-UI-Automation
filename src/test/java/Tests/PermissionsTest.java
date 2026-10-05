@@ -119,13 +119,12 @@ public class PermissionsTest extends BrowserSetup {
         permissionsPage.clickSaveAndConfirm();
 
         ExtentReportListener.pass(
-                "Save and Yes buttons clicked successfully"
-        );
+                "Save and Yes buttons clicked successfully");
 
-
-        System.out.println(
-                "[PASS] Adding Permission flow completed successfully"
-        );
+        ExtentReportListener.pass(
+                "Adding Permission flow completed successfully");
+       //-----------------------
+        
     }
 
     @AfterClass

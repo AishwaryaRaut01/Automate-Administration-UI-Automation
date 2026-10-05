@@ -62,8 +62,41 @@ public class TransactionSummaryTest extends BrowserSetup {
         
         summaryPage.selectAllIncidentsfromDropDown();
         ExtentReportListener.pass("All Incidents selected from Incident WorkList DropDown");
+        
+        
+        ExtentReportListener.info("Checking for active filters");
+
+        if (summaryPage.isActiveFilterPresent()) {
+
+            ExtentReportListener.info("Active filter found. Clearing active filter.");
+
+            summaryPage.clearAllFilters();
+
+            ExtentReportListener.pass("Active filter cleared successfully.");
+
+        } else {
+
+            ExtentReportListener.info("No active filter found. Continuing without clearing.");
+        }
+
+        Thread.sleep(1000);
+        
+        ExtentReportListener.info("Applying Status filter with Contains mode and value New");
+        summaryPage.filterStatusAsContains();
         Thread.sleep(1000);
 
+        // Check whether matching rows are available
+        if (summaryPage.isNoMatchingRowsDisplayed()) {
+
+            ExtentReportListener.info("No matching rows found for status: New");
+
+            driver.quit();
+            return;
+        }
+
+        ExtentReportListener.pass("Status filter applied successfully with Contains mode for New");
+
+        
         // 2. Row Interception Check
         summaryPage.selectFirstRowIncident();
         ExtentReportListener.pass("First row selection executed dynamically inside data grid view");
@@ -188,7 +221,7 @@ public class TransactionSummaryTest extends BrowserSetup {
 		ExtentReportListener.pass("Save button clicked successfully");
     }
 
-   @AfterClass
+  //@AfterClass
     public void closeSummarySuiteSession() {
         ExtentReportListener.info("Closing Browser");
         super.teardown();

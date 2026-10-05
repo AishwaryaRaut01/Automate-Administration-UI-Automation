@@ -63,17 +63,17 @@ public class RolesPage extends BrowserSetup{
     @FindBy(xpath = "//div[@role='option' and @value='5']")
     private WebElement pageValue;
 
-    @FindBy(xpath = "//tr[.//td[@data-last-row='true']]")
+    @FindBy(xpath = "(//div[@role='row' and @row-id])[last()]")
     private WebElement lastRow;
 
     // --- Table Content Locators (Your Exact Data Index Tracking XPaths) ---
-    @FindBy(xpath = "//td[@data-last-row='true' and @data-index='2']")
+    @FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='role_name'])[last()]")
     private WebElement roleNameTableValue; // Maps to your firstNameValue example pattern
 
-    @FindBy(xpath = "//td[@data-last-row='true' and @data-index='3']")
+    @FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='description'])[last()]")
     private WebElement descriptionTableValue; // Maps to your emailValue example pattern
 
-    @FindBy(xpath = "//td[@data-last-row='true' and @data-index='10']")
+    @FindBy(xpath = "(//div[@role='row' and @row-id]//div[@role='gridcell' and @col-id='created_on'])[last()]")
     private WebElement createdOnTableValue; // Maps to your createdOnValue example pattern
 
     public void navigateToRoles() {
@@ -144,13 +144,13 @@ public class RolesPage extends BrowserSetup{
     }
     
  // --- Pagination Actions ---
-    public void selectPageValue() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(pageSelectButton)).click();
-        Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(pageValue)).click();
-        Thread.sleep(1000);
-        wait.until(ExpectedConditions.elementToBeClickable(lastPageButton)).click();
-    }
+//    public void selectPageValue() throws InterruptedException {
+//        wait.until(ExpectedConditions.elementToBeClickable(pageSelectButton)).click();
+//        Thread.sleep(1500);
+//        wait.until(ExpectedConditions.elementToBeClickable(pageValue)).click();
+//        Thread.sleep(1000);
+//        wait.until(ExpectedConditions.elementToBeClickable(lastPageButton)).click();
+//    }
 
     // --- Grid Table Value Extraction Getters ---
     public String getDisplayedRoleName() throws InterruptedException {

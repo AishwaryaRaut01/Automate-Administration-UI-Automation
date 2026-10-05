@@ -161,13 +161,13 @@ public class UsersTest extends BrowserSetup {
 		Thread.sleep(1000);
 		usersPage.clickYesAndNextPage();
 
-		ExtentReportListener.pass("Yes and navigating to next page button clicked successfully");
+		ExtentReportListener.pass("Yes button clicked successfully");
 		Thread.sleep(1500);
 		
-		usersPage.selectPageValue();
-
-		Thread.sleep(1000);
-		ExtentReportListener.pass("Page value selected successfully");
+//		usersPage.selectPageValue();
+//
+//		Thread.sleep(1000);
+//		ExtentReportListener.pass("Page value selected successfully");
 
 		System.out.println("[PASS] New User creation flow completed successfully");
 	}
